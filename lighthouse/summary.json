@@ -1,0 +1,65 @@
+{
+  "base": "KR1-fr-bk-679832",
+  "results": [
+    {
+      "route": "index.html",
+      "theme": "light",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "catalog.html",
+      "theme": "light",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "product.html?id=jacket",
+      "theme": "light",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "order.html",
+      "theme": "light",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "contacts.html",
+      "theme": "light",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "index.html",
+      "theme": "dark",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "catalog.html",
+      "theme": "dark",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "product.html?id=jacket",
+      "theme": "dark",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "order.html",
+      "theme": "dark",
+      "score": 100,
+      "failed": []
+    },
+    {
+      "route": "contacts.html",
+      "theme": "dark",
+      "score": 100,
+      "failed": []
+    }
+  ]
+}

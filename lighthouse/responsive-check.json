@@ -1,0 +1,17 @@
+{
+  "source": "KR1-fr-bk-679832",
+  "sourceCommit": "f6ebbb3",
+  "htmlFiles": 7,
+  "productCount": 20,
+  "layoutStatesChecked": 130,
+  "widths": [
+    360,
+    430,
+    768,
+    1024,
+    1440
+  ],
+  "orderSelectionsChecked": 20,
+  "failures": [],
+  "errors": []
+}

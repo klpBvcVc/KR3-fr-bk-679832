@@ -8,16 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/ui.js"></script>
+  <link rel="stylesheet" href="css/style.css?v=kr1-1">
+  <link rel="stylesheet" href="css/responsive.css?v=kr1-1">
+  <script src="js/accessibility.js?v=kr1-1" defer></script>
+  <script src="js/ui.js?v=kr1-1"></script>
 </head>
 
 <body id="top">
+  <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">Меню</button>
+      <nav id="mainNav" class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
@@ -31,8 +35,8 @@
       </button>
     </div>
   </header>
-  
-  <main class="container">
+
+  <main class="container" id="mainContent" tabindex="-1">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
@@ -54,7 +58,7 @@
 
     <section class="section" id="size-top">
       <h2 class="section__title">Верхняя одежда, трикотаж, платья</h2>
-      <table class="product-table">
+      <div class="table-scroll"><table class="product-table">
         <caption class="product-table__caption">Размеры верхней одежды и трикотажа</caption>
         <thead>
           <tr class="product-table__row">
@@ -108,12 +112,12 @@
       <td class="product-table__cell">92-96</td>
     </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section class="section" id="size-bottom">
       <h2 class="section__title">Брюки, джинсы, шорты, юбки</h2>
-      <table class="product-table">
+      <div class="table-scroll"><table class="product-table">
         <caption class="product-table__caption">Размеры брюк, джинсов, шорт и юбок</caption>
         <thead>
           <tr class="product-table__row">
@@ -168,12 +172,12 @@
       <td class="product-table__cell">108-112</td>
     </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section class="section" id="size-shoes">
       <h2 class="section__title">Обувь</h2>
-      <table class="product-table">
+      <div class="table-scroll"><table class="product-table">
         <caption class="product-table__caption">Размеры обуви</caption>
         <thead>
           <tr class="product-table__row">
@@ -239,12 +243,12 @@
       <td class="product-table__cell">29,8</td>
     </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section class="section" id="size-hat">
       <h2 class="section__title">Шапки</h2>
-      <table class="product-table">
+      <div class="table-scroll"><table class="product-table">
         <caption class="product-table__caption">Размеры головных уборов</caption>
         <thead>
           <tr class="product-table__row">
@@ -270,12 +274,12 @@
       <td class="product-table__cell">60-61</td>
     </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section class="section" id="size-gloves">
       <h2 class="section__title">Перчатки</h2>
-      <table class="product-table">
+      <div class="table-scroll"><table class="product-table">
         <caption class="product-table__caption">Размеры перчаток</caption>
         <thead>
           <tr class="product-table__row">
@@ -306,7 +310,7 @@
       <td class="product-table__cell">20-21</td>
     </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
   </main>

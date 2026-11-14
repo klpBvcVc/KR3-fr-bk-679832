@@ -8,18 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/ui.js"></script>
+  <link rel="stylesheet" href="css/style.css?v=kr1-1">
+  <link rel="stylesheet" href="css/responsive.css?v=kr1-1">
+  <script src="js/accessibility.js?v=kr1-1" defer></script>
+  <script src="js/ui.js?v=kr1-1"></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">Меню</button>
+      <nav id="mainNav" class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="catalog.html">Каталог</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярное</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
@@ -31,7 +35,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="mainContent" tabindex="-1">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__current">Каталог</span>
@@ -56,7 +60,7 @@
     <section class="catalog-layout">
       <aside class="catalog-filters">
         <h2>Фильтры</h2>
-            
+
         <form class="filters-form" action="#" method="get">
           <fieldset class="filters-form__group">
             <legend class="filters-form__legend">Категория</legend>
@@ -117,258 +121,195 @@
         <h2>Список товаров</h2>
         <div class="products-grid">
           <article class="product-card" data-category="clothes" data-price="mid">
-            <a class="product-card__image-link" href="product.html"><img class="product-card__image" src="images/products/jeans.jpg" alt="Джинсы" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=jeans"><img width="800" height="800" class="product-card__image" src="images/products/jeans.jpg" srcset="images/responsive/jeans-320.webp 320w, images/responsive/jeans-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Джинсы" loading="lazy"></a>
             <h3 class="product-card__title">Джинсы</h3>
             <p class="product-card__description">Классические джинсы прямого кроя.</p>
             <p class="product-card__price">Цена: 4 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=jeans">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="clothes sale" data-price="high">
             <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-jacket.html"><img class="product-card__image" src="images/products/jacket.jpg" alt="Куртка" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=jacket"><img width="800" height="532" class="product-card__image" src="images/products/jacket.jpg" srcset="images/responsive/jacket-320.webp 320w, images/responsive/jacket-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Куртка" loading="lazy"></a>
             <h3 class="product-card__title">Куртка</h3>
             <p class="product-card__description">Демисезонная куртка из плотной ткани.</p>
             <p class="product-card__price">Цена: 8 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-jacket.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=jacket">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="clothes" data-price="mid">
-            <a class="product-card__image-link" href="product-hoodie.html"><img class="product-card__image" src="images/products/hoodie.jpg" alt="Толстовка" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=hoodie"><img width="800" height="1200" class="product-card__image" src="images/products/hoodie.jpg" srcset="images/responsive/hoodie-320.webp 320w, images/responsive/hoodie-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Толстовка" loading="lazy"></a>
             <h3 class="product-card__title">Толстовка</h3>
             <p class="product-card__description">Тёплая толстовка с капюшоном.</p>
             <p class="product-card__price">Цена: 3 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-hoodie.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=hoodie">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-tshirt.html"><img class="product-card__image" src="images/products/tshirt.jpg" alt="Футболка базовая" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=tshirt"><img width="800" height="1200" class="product-card__image" src="images/products/tshirt.jpg" srcset="images/responsive/tshirt-320.webp 320w, images/responsive/tshirt-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Футболка базовая" loading="lazy"></a>
             <h3 class="product-card__title">Футболка базовая</h3>
             <p class="product-card__description">Хлопковая футболка свободного кроя.</p>
             <p class="product-card__price">Цена: 1 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-tshirt.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=tshirt">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-plaid-shirt.html"><img class="product-card__image" src="images/products/plaid-shirt.jpg" alt="Рубашка в клетку" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=plaid-shirt"><img width="800" height="600" class="product-card__image" src="images/products/plaid-shirt.jpg" srcset="images/responsive/plaid-shirt-320.webp 320w, images/responsive/plaid-shirt-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Рубашка в клетку" loading="lazy"></a>
             <h3 class="product-card__title">Рубашка в клетку</h3>
             <p class="product-card__description">Рубашка из плотного хлопка с длинным рукавом.</p>
             <p class="product-card__price">Цена: 2 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-plaid-shirt.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=plaid-shirt">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="clothes new" data-price="mid">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-sweater.html"><img class="product-card__image" src="images/products/sweater.jpg" alt="Свитер вязаный" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=sweater"><img width="800" height="1000" class="product-card__image" src="images/products/sweater.jpg" srcset="images/responsive/sweater-320.webp 320w, images/responsive/sweater-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Свитер вязаный" loading="lazy"></a>
             <h3 class="product-card__title">Свитер вязаный</h3>
             <p class="product-card__description">Свитер из шерстяной пряжи, воротник под горло.</p>
             <p class="product-card__price">Цена: 4 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-sweater.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=sweater">Подробнее</a>
           </article>
 
-          <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-longsleeve.html"><img class="product-card__image" src="images/products/longsleeve.jpg" alt="Лонгслив" loading="lazy"></a>
-            <h3 class="product-card__title">Лонгслив</h3>
-            <p class="product-card__description">Лонгслив из мягкого трикотажа для многослойных образов.</p>
-            <p class="product-card__price">Цена: 1 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-longsleeve.html">Подробнее</a>
-          </article>
 
-          <article class="product-card" data-category="clothes" data-price="mid">
-            <a class="product-card__image-link" href="product-chinos.html"><img class="product-card__image" src="images/products/chinos.jpg" alt="Брюки чинос" loading="lazy"></a>
-            <h3 class="product-card__title">Брюки чинос</h3>
-            <p class="product-card__description">Брюки зауженного кроя из хлопка с эластаном.</p>
-            <p class="product-card__price">Цена: 3 790 руб.</p>
-            <a class="button button--primary product-card__button" href="product-chinos.html">Подробнее</a>
-          </article>
 
-          <article class="product-card" data-category="clothes new" data-price="mid">
-            <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-cardigan.html"><img class="product-card__image" src="images/products/cardigan.jpg" alt="Кардиган" loading="lazy"></a>
-            <h3 class="product-card__title">Кардиган</h3>
-            <p class="product-card__description">Тёплый кардиган на пуговицах, средней плотности.</p>
-            <p class="product-card__price">Цена: 4 290 руб.</p>
-            <a class="button button--primary product-card__button" href="product-cardigan.html">Подробнее</a>
-          </article>
 
-          <article class="product-card product-card--discount" data-category="clothes sale" data-price="high">
-            <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-bomber.html"><img class="product-card__image" src="images/products/bomber.jpg" alt="Бомбер" loading="lazy"></a>
-            <h3 class="product-card__title">Бомбер</h3>
-            <p class="product-card__description">Лёгкий бомбер на молнии для прохладной погоды.</p>
-            <p class="product-card__price">Цена: 6 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-bomber.html">Подробнее</a>
-          </article>
+
+
+
+
 
           <article class="product-card" data-category="clothes" data-price="high">
-            <a class="product-card__image-link" href="product-coat.html"><img class="product-card__image" src="images/products/coat.jpg" alt="Пальто шерстяное" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=coat"><img width="800" height="1200" class="product-card__image" src="images/products/coat.jpg" srcset="images/responsive/coat-320.webp 320w, images/responsive/coat-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Пальто шерстяное" loading="lazy"></a>
             <h3 class="product-card__title">Пальто шерстяное</h3>
             <p class="product-card__description">Классическое пальто прямого силуэта из шерсти.</p>
             <p class="product-card__price">Цена: 11 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-coat.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=coat">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="shoes new" data-price="high">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-chelsea-boots.html"><img class="product-card__image" src="images/products/chelsea-boots.jpg" alt="Ботинки челси" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=chelsea-boots"><img width="800" height="450" class="product-card__image" src="images/products/chelsea-boots.jpg" srcset="images/responsive/chelsea-boots-320.webp 320w, images/responsive/chelsea-boots-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Ботинки челси" loading="lazy"></a>
             <h3 class="product-card__title">Ботинки челси</h3>
             <p class="product-card__description">Кожаные ботинки на резинках с устойчивой подошвой.</p>
             <p class="product-card__price">Цена: 7 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-chelsea-boots.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=chelsea-boots">Подробнее</a>
           </article>
 
-          <article class="product-card" data-category="shoes" data-price="high">
-            <a class="product-card__image-link" href="product-sneakers.html"><img class="product-card__image" src="images/products/sneakers.jpg" alt="Утеплённые кроссовки" loading="lazy"></a>
-            <h3 class="product-card__title">Утеплённые кроссовки</h3>
-            <p class="product-card__description">Кроссовки с мембраной и тёплой подкладкой.</p>
-            <p class="product-card__price">Цена: 6 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-sneakers.html">Подробнее</a>
-          </article>
+
 
           <article class="product-card" data-category="shoes" data-price="high">
-            <a class="product-card__image-link" href="product-lace-boots.html"><img class="product-card__image" src="images/products/lace-boots.jpg" alt="Ботинки на шнуровке" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=lace-boots"><img width="800" height="1199" class="product-card__image" src="images/products/lace-boots.jpg" srcset="images/responsive/lace-boots-320.webp 320w, images/responsive/lace-boots-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Ботинки на шнуровке" loading="lazy"></a>
             <h3 class="product-card__title">Ботинки на шнуровке</h3>
             <p class="product-card__description">Высокие кожаные ботинки на протекторной подошве.</p>
             <p class="product-card__price">Цена: 8 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-lace-boots.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=lace-boots">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="shoes sale" data-price="mid">
             <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-rain-boots.html"><img class="product-card__image" src="images/products/rain-boots.jpg" alt="Резиновые сапоги" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=rain-boots"><img width="800" height="640" class="product-card__image" src="images/products/rain-boots.jpg" srcset="images/responsive/rain-boots-320.webp 320w, images/responsive/rain-boots-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Резиновые сапоги" loading="lazy"></a>
             <h3 class="product-card__title">Резиновые сапоги</h3>
             <p class="product-card__description">Непромокаемые сапоги для дождливой осени.</p>
             <p class="product-card__price">Цена: 3 290 руб.</p>
-            <a class="button button--primary product-card__button" href="product-rain-boots.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=rain-boots">Подробнее</a>
           </article>
 
-          <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-shorts.html"><img class="product-card__image" src="images/products/shorts.jpg" alt="Шорты хлопковые" loading="lazy"></a>
-            <h3 class="product-card__title">Шорты хлопковые</h3>
-            <p class="product-card__description">Лёгкие шорты из хлопка прямого кроя.</p>
-            <p class="product-card__price">Цена: 1 790 руб.</p>
-            <a class="button button--primary product-card__button" href="product-shorts.html">Подробнее</a>
-          </article>
+
 
           <article class="product-card" data-category="clothes new" data-price="low">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-skirt.html"><img class="product-card__image" src="images/products/skirt.jpg" alt="Юбка миди в клетку" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=skirt"><img width="800" height="1200" class="product-card__image" src="images/products/skirt.jpg" srcset="images/responsive/skirt-320.webp 320w, images/responsive/skirt-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Юбка миди в клетку" loading="lazy"></a>
             <h3 class="product-card__title">Юбка миди в клетку</h3>
             <p class="product-card__description">Расклешённая юбка миди в мелкую клетку.</p>
             <p class="product-card__price">Цена: 2 890 руб.</p>
-            <a class="button button--primary product-card__button" href="product-skirt.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=skirt">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="clothes sale" data-price="mid">
             <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-dress.html"><img class="product-card__image" src="images/products/dress.jpg" alt="Платье-рубашка в полоску" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=dress"><img width="800" height="800" class="product-card__image" src="images/products/dress.jpg" srcset="images/responsive/dress-320.webp 320w, images/responsive/dress-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Платье-рубашка в полоску" loading="lazy"></a>
             <h3 class="product-card__title">Платье-рубашка в полоску</h3>
             <p class="product-card__description">Платье-рубашка из лёгкой ткани с поясом.</p>
             <p class="product-card__price">Цена: 3 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-dress.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=dress">Подробнее</a>
           </article>
 
-          <article class="product-card" data-category="clothes new" data-price="mid">
-            <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-vest.html"><img class="product-card__image" src="images/products/vest.jpg" alt="Жилет стёганый" loading="lazy"></a>
-            <h3 class="product-card__title">Жилет стёганый</h3>
-            <p class="product-card__description">Тёплый стёганый жилет на молнии.</p>
-            <p class="product-card__price">Цена: 5 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-vest.html">Подробнее</a>
-          </article>
+
 
           <article class="product-card" data-category="clothes new" data-price="high">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-puffer.html"><img class="product-card__image" src="images/products/puffer.jpg" alt="Пуховик" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=puffer"><img width="800" height="1199" class="product-card__image" src="images/products/puffer.jpg" srcset="images/responsive/puffer-320.webp 320w, images/responsive/puffer-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Пуховик" loading="lazy"></a>
             <h3 class="product-card__title">Пуховик</h3>
             <p class="product-card__description">Глянцевый пуховик с капюшоном.</p>
             <p class="product-card__price">Цена: 12 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-puffer.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=puffer">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="clothes sale" data-price="low">
             <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-scarf.html"><img class="product-card__image" src="images/products/scarf.jpg" alt="Шарф в полоску" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=scarf"><img width="800" height="1067" class="product-card__image" src="images/products/scarf.jpg" srcset="images/responsive/scarf-320.webp 320w, images/responsive/scarf-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Шарф в полоску" loading="lazy"></a>
             <h3 class="product-card__title">Шарф в полоску</h3>
             <p class="product-card__description">Шерстяной шарф с бахромой.</p>
             <p class="product-card__price">Цена: 1 290 руб.</p>
-            <a class="button button--primary product-card__button" href="product-scarf.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=scarf">Подробнее</a>
           </article>
 
-          <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-beanie.html"><img class="product-card__image" src="images/products/beanie.jpg" alt="Шапка вязаная" loading="lazy"></a>
-            <h3 class="product-card__title">Шапка вязаная</h3>
-            <p class="product-card__description">Шапка бини из шерсти с отворотом.</p>
-            <p class="product-card__price">Цена: 1 190 руб.</p>
-            <a class="button button--primary product-card__button" href="product-beanie.html">Подробнее</a>
-          </article>
 
-          <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-polo.html"><img class="product-card__image" src="images/products/polo.jpg" alt="Футболка поло" loading="lazy"></a>
-            <h3 class="product-card__title">Футболка поло</h3>
-            <p class="product-card__description">Классическое поло из хлопкового пике.</p>
-            <p class="product-card__price">Цена: 2 190 руб.</p>
-            <a class="button button--primary product-card__button" href="product-polo.html">Подробнее</a>
-          </article>
 
-          <article class="product-card" data-category="clothes" data-price="low">
-            <a class="product-card__image-link" href="product-gloves.html"><img class="product-card__image" src="images/products/gloves.jpg" alt="Перчатки кожаные" loading="lazy"></a>
-            <h3 class="product-card__title">Перчатки кожаные</h3>
-            <p class="product-card__description">Чёрные перчатки из натуральной кожи.</p>
-            <p class="product-card__price">Цена: 2 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-gloves.html">Подробнее</a>
-          </article>
+
+
+
 
           <article class="product-card product-card--discount" data-category="shoes sale" data-price="low">
             <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-canvas-sneakers.html"><img class="product-card__image" src="images/products/canvas-sneakers.jpg" alt="Кеды текстильные" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=canvas-sneakers"><img width="800" height="533" class="product-card__image" src="images/products/canvas-sneakers.jpg" srcset="images/responsive/canvas-sneakers-320.webp 320w, images/responsive/canvas-sneakers-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Кеды текстильные" loading="lazy"></a>
             <h3 class="product-card__title">Кеды текстильные</h3>
             <p class="product-card__description">Низкие кеды из плотного хлопка.</p>
             <p class="product-card__price">Цена: 2 790 руб.</p>
-            <a class="button button--primary product-card__button" href="product-canvas-sneakers.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=canvas-sneakers">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="shoes new" data-price="low">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-slides.html"><img class="product-card__image" src="images/products/slides.jpg" alt="Шлёпанцы с декором" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=slides"><img width="800" height="1198" class="product-card__image" src="images/products/slides.jpg" srcset="images/responsive/slides-320.webp 320w, images/responsive/slides-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Шлёпанцы с декором" loading="lazy"></a>
             <h3 class="product-card__title">Шлёпанцы с декором</h3>
             <p class="product-card__description">Лёгкие шлёпанцы с декоративными ремешками.</p>
             <p class="product-card__price">Цена: 1 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-slides.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=slides">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="shoes" data-price="low">
-            <a class="product-card__image-link" href="product-sandals.html"><img class="product-card__image" src="images/products/sandals.jpg" alt="Сандалии на пробковой подошве" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=sandals"><img width="800" height="1200" class="product-card__image" src="images/products/sandals.jpg" srcset="images/responsive/sandals-320.webp 320w, images/responsive/sandals-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Сандалии на пробковой подошве" loading="lazy"></a>
             <h3 class="product-card__title">Сандалии на пробковой подошве</h3>
             <p class="product-card__description">Кожаные сандалии с двумя ремешками.</p>
             <p class="product-card__price">Цена: 2 290 руб.</p>
-            <a class="button button--primary product-card__button" href="product-sandals.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=sandals">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="shoes" data-price="mid">
-            <a class="product-card__image-link" href="product-loafers.html"><img class="product-card__image" src="images/products/loafers.jpg" alt="Лоферы-мокасины кожаные" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=loafers"><img width="800" height="533" class="product-card__image" src="images/products/loafers.jpg" srcset="images/responsive/loafers-320.webp 320w, images/responsive/loafers-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Лоферы-мокасины кожаные" loading="lazy"></a>
             <h3 class="product-card__title">Лоферы-мокасины кожаные</h3>
             <p class="product-card__description">Мягкие кожаные мокасины с металлической пряжкой.</p>
             <p class="product-card__price">Цена: 5 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product-loafers.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=loafers">Подробнее</a>
           </article>
 
           <article class="product-card" data-category="shoes new" data-price="mid">
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <a class="product-card__image-link" href="product-running.html"><img class="product-card__image" src="images/products/running.jpg" alt="Кроссовки беговые" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=running"><img width="800" height="1000" class="product-card__image" src="images/products/running.jpg" srcset="images/responsive/running-320.webp 320w, images/responsive/running-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Кроссовки беговые" loading="lazy"></a>
             <h3 class="product-card__title">Кроссовки беговые</h3>
             <p class="product-card__description">Лёгкие кроссовки для бега и тренировок.</p>
             <p class="product-card__price">Цена: 5 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-running.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=running">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount" data-category="shoes sale" data-price="high">
             <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <a class="product-card__image-link" href="product-winter-boots.html"><img class="product-card__image" src="images/products/winter-boots.jpg" alt="Ботинки зимние" loading="lazy"></a>
+            <a class="product-card__image-link" href="product.html?id=winter-boots"><img width="800" height="533" class="product-card__image" src="images/products/winter-boots.jpg" srcset="images/responsive/winter-boots-320.webp 320w, images/responsive/winter-boots-640.webp 640w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt="Ботинки зимние" loading="lazy"></a>
             <h3 class="product-card__title">Ботинки зимние</h3>
             <p class="product-card__description">Утеплённые ботинки с меховой подкладкой.</p>
             <p class="product-card__price">Цена: 9 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product-winter-boots.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html?id=winter-boots">Подробнее</a>
           </article>
         </div>
       </section>
